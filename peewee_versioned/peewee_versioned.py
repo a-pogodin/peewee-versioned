@@ -270,5 +270,5 @@ class VersionedModel(with_metaclass(MetaModel, Model)):
     def _finalize_current_version(self):
         current_version = self._get_current_version()
         if current_version is not None:
-            current_version._valid_until = datetime.datetime.utcnow()
+            current_version._valid_until = datetime.datetime.now()
             current_version.save()
